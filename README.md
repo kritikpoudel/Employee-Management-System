@@ -1,16 +1,40 @@
-# React + Vite
+# Employee Management System (EMS)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+This is a simple Employee Management System (EMS) built with React and Tailwind CSS.  
+It allows an admin to manage employees and their tasks, while employees can view and manage their own tasks. The project uses localStorage to simulate a backend database.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Admin and Employee login
+- Admin dashboard to view all employees and their task statistics
+- Employee dashboard to view personal tasks and status
+- Create, assign, and manage tasks
+- Task categorization: New, Active, Completed, Failed
+- Logout functionality
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
+- **Frontend:** ReactJS  
+- **Styling:** Tailwind CSS  
+- **State Management:** React Context API  
+- **Storage:** localStorage  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Login Credentials
+
+### Admin
+- **Email:** admin@example.com  
+- **Password:** 123  
+
+### Employees
+| Name       | Email            | Password |
+|------------|-----------------|----------|
+| Employee1  | employee@1.com  | 123      |
+| Employee2  | employee@2.com  | 123      |
+| Employee3  | employee@3.com  | 123      |
+| Employee4  | employee@4.com  | 123      |
+| Employee5  | employee@5.com  | 123      |

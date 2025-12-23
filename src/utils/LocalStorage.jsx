@@ -250,7 +250,7 @@ const admin = [
   {
     id: 1,
     firstName: "AdKritik",
-    email: "kritik@1.com",
+    email: "admin@example.com",
     password: "123",
     // tasks: []
   },
