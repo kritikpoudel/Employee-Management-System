@@ -20,6 +20,7 @@ const [userData, setUserData] = useState({
 
 // }, [])
   useEffect(() => {
+    setLocalStorage(); 
     const data = getLocalStorage();
     if (data) {
       setUserData(data);
