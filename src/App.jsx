@@ -26,24 +26,38 @@ useEffect(()=>{
 },[])
 
 
-
   const handleLogin = (email, password) => {
-    if (email == "admin@me.com" && password == "123")
-    // if(authData && authData.admin.find((e)=>email== e.email && password==e.password))
-       {
-      setUser("admin");
-      localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'}))
-    } else if (authData) {
-      const employee =authData.employees.find((e)=>email== e.email && password==e.password)
-      if(employee){
-        setUser("employee");
-        setLoggedInUserData(employee)
-        localStorage.setItem('loggedInUser',JSON.stringify({role:'employee',data:employee}))
-      }
+    if (!authData) return;
 
-    } else {
-      alert("Invalid Credential");
+    const adminUser = authData.admin.find(
+      (e) => e.email === email && e.password === password
+    );
+
+    if (adminUser) {
+      setUser("admin");
+      setLoggedInUserData(adminUser);
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ role: "admin", data: adminUser })
+      );
+      return;
     }
+
+    const employee = authData.employees.find(
+      (e) => e.email === email && e.password === password
+    );
+
+    if (employee) {
+      setUser("employee");
+      setLoggedInUserData(employee);
+      localStorage.setItem(
+        "loggedInUser",
+        JSON.stringify({ role: "employee", data: employee })
+      );
+      return;
+    }
+
+    alert("Invalid Credential");
   };
 
  
@@ -52,7 +66,7 @@ useEffect(()=>{
     <>
         {!user ?<Login handleLogin={handleLogin} />:''}
 
-    {user == "admin" ? <AdminDashboard />:(user=='employee'?<EmployeeDashboard data={loggedInUserData}/>:null)}
+    {user == "admin" ? <AdminDashboard changeUser={setUser} data={loggedInUserData} />:(user=='employee'?<EmployeeDashboard changeUser={setUser} data={loggedInUserData}/>:null)}
     
       
     </>
